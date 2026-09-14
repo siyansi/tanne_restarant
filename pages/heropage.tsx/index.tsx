@@ -21,6 +21,7 @@ import {
 } from "lucide-react";
 import RibbonGallerySection from "@/components/gallery";
 import HeroSection from "@/components/hero";
+import ContactSection from "@/hooks/contact";
 const navItems = ["Home", "About", "Spaces", "Services", "Menu", "Gallery", "Contact"];
 
 const Instagram = ({ size = 24, strokeWidth = 2, className }: { size?: number; strokeWidth?: number; className?: string }) => (
@@ -1127,100 +1128,11 @@ const loungeSpaces = [
         {/* Contact & Reservation Form Section */}
         <section
           id="contact"
-          className="relative z-10 py-24 md:py-32 px-4 md:px-[max(1.25rem,calc((100vw-93.75rem)/2))] border-t border-[var(--line)] scroll-mt-20 grid grid-cols-1 md:grid-cols-[5fr_7fr] gap-12 md:gap-[clamp(3rem,8vw,8rem)] items-start"
+          className=""
         >
-          <div data-reveal data-motion="left">
-            <span className="font-display font-medium text-[0.82rem] text-[var(--gold)]">(06)</span>
-            <h2 className="mt-3 font-display font-bold text-[clamp(2.8rem,5vw,5rem)] leading-[0.98]">
-              Find your<br />way in.
-            </h2>
-            <div className="grid gap-3 mt-8">
-              <a href="tel:+918489988007" className="text-[var(--soft)] hover:text-[var(--cyan)] text-base transition-colors">+91 84899 88007</a>
-              <a href="tel:+918489988008" className="text-[var(--soft)] hover:text-[var(--cyan)] text-base transition-colors">+91 84899 88008</a>
-              <a className="text-[var(--cyan)] text-base" href="mailto:admin@tanne.in">admin@tanne.in</a>
-              <address className="text-[var(--soft)] text-base not-italic leading-relaxed">
-                Pirivu 5/171/B1, Avinashi – Coimbatore Road,<br />
-                Arasur, Coimbatore, Tamil Nadu 641407
-              </address>
-            </div>
-            <a
-              className="inline-flex items-center gap-1.5 mt-8 text-[var(--gold)] font-display font-medium text-[0.86rem] underline underline-offset-8 decoration-[color-mix(in_oklab,var(--cyan)_48%,transparent)]"
-              href="https://g.co/kgs/aYQzbSS"
-              target="_blank"
-              rel="noreferrer"
-            >
-              View on Google Maps <span>↗</span>
-            </a>
-          </div>
-
-          <form
-            className="p-[clamp(1.5rem,4vw,3rem)] grid gap-5 border border-[var(--line)] rounded-2xl bg-[var(--glass)] backdrop-blur-2xl backdrop-saturate-150 shadow-[0_30px_90px_oklch(0_0_0/0.15)]"
-            onSubmit={submitReservation}
-            data-reveal
-            data-motion="right"
-          >
-            <p className="m-0 text-[var(--gold)] font-display font-medium text-[0.72rem] uppercase tracking-[0.16em]">
-              Reservation request
-            </p>
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-              <label className="grid gap-2 text-[var(--soft)] text-[0.74rem] uppercase tracking-wider">
-                Name
-                <input
-                  name="name"
-                  required
-                  placeholder="Your name"
-                  className="w-full min-h-[3.25rem] px-4 border border-[var(--line)] rounded-lg outline-none bg-[var(--field)] text-[var(--ink)] tracking-normal normal-case transition-all focus:border-[var(--cyan)] focus:ring-2 focus:ring-[var(--cyan)]/20"
-                />
-              </label>
-              <label className="grid gap-2 text-[var(--soft)] text-[0.74rem] uppercase tracking-wider">
-                Phone
-                <input
-                  name="phone"
-                  required
-                  type="tel"
-                  placeholder="+91"
-                  className="w-full min-h-[3.25rem] px-4 border border-[var(--line)] rounded-lg outline-none bg-[var(--field)] text-[var(--ink)] tracking-normal normal-case transition-all focus:border-[var(--cyan)] focus:ring-2 focus:ring-[var(--cyan)]/20"
-                />
-              </label>
-            </div>
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-              <label className="grid gap-2 text-[var(--soft)] text-[0.74rem] uppercase tracking-wider">
-                Date
-                <input
-                  name="date"
-                  required
-                  type="date"
-                  className="w-full min-h-[3.25rem] px-4 border border-[var(--line)] rounded-lg outline-none bg-[var(--field)] text-[var(--ink)] tracking-normal normal-case transition-all focus:border-[var(--cyan)] focus:ring-2 focus:ring-[var(--cyan)]/20"
-                />
-              </label>
-              <label className="grid gap-2 text-[var(--soft)] text-[0.74rem] uppercase tracking-wider">
-                Guests
-                <input
-                  name="guests"
-                  required
-                  type="number"
-                  min="1"
-                  max="30"
-                  placeholder="2"
-                  className="w-full min-h-[3.25rem] px-4 border border-[var(--line)] rounded-lg outline-none bg-[var(--field)] text-[var(--ink)] tracking-normal normal-case transition-all focus:border-[var(--cyan)] focus:ring-2 focus:ring-[var(--cyan)]/20"
-                />
-              </label>
-            </div>
-            <label className="grid gap-2 text-[var(--soft)] text-[0.74rem] uppercase tracking-wider">
-              Occasion
-              <input
-                name="occasion"
-                placeholder="Anniversary, dinner, celebration…"
-                className="w-full min-h-[3.25rem] px-4 border border-[var(--line)] rounded-lg outline-none bg-[var(--field)] text-[var(--ink)] tracking-normal normal-case transition-all focus:border-[var(--cyan)] focus:ring-2 focus:ring-[var(--cyan)]/20"
-              />
-            </label>
-            <button
-              className="w-full mt-2 min-h-[2.75rem] py-3 px-5 border border-[var(--gold)] bg-[var(--gold)] text-[oklch(0.12_0_0)] rounded-full font-display font-medium text-[0.88rem] flex items-center justify-center gap-2 cursor-pointer transition-transform duration-300 hover:-translate-y-0.5 hover:shadow-[0_0_30px_color-mix(in_oklab,var(--gold)_24%,transparent)]"
-              type="submit"
-            >
-              Request via WhatsApp <span>↗</span>
-            </button>
-          </form>
+          <ContactSection submitReservation={function (e: FormEvent<HTMLFormElement>): void {
+                      throw new Error("Function not implemented.");
+                  } } />
         </section>
       </main>
 

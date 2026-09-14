@@ -120,18 +120,18 @@ export default function HeroSection() {
       {/* 6. Top Technical Telemetry (Coordinate Bar) */}
       <div className="absolute top-24 md:top-28 inset-x-6 md:inset-x-12 z-20 flex justify-between items-center pointer-events-none border-b border-white/[0.07] pb-4">
         <div className="flex items-center gap-3">
-          <span className="relative flex h-2 w-2">
+          {/* <span className="relative flex h-2 w-2">
             <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[var(--gold)] opacity-75" />
             <span className="relative inline-flex rounded-full h-2 w-2 bg-[var(--gold)]" />
-          </span>
-          <span className="font-mono text-[0.68rem] tracking-[0.3em] uppercase text-white/70">
+          </span> */}
+          {/* <span className="font-mono text-[0.68rem] tracking-[0.3em] uppercase text-white/70">
             Twilight Salon · Service 19:00 — 00:00
-          </span>
+          </span> */}
         </div>
 
         <div className="hidden sm:flex items-center gap-4 font-mono text-[0.68rem] tracking-[0.22em] text-[var(--soft)] uppercase">
-          <span>Arasur // Pirivu</span>
-          <span className="text-[var(--cyan)]">/</span>
+          {/* <span>Arasur // Pirivu</span> */}
+          <span className="text-[var(--cyan)]"></span>
           <span>Coimbatore</span>
         </div>
       </div>
@@ -148,10 +148,10 @@ export default function HeroSection() {
           transition={{ duration: 0.8, delay: 0.1 }}
           className="inline-flex items-center gap-3 px-4 py-1.5 rounded-full border border-[var(--gold)]/35 bg-[#120d08]/85 backdrop-blur-xl mb-6 shadow-xl"
         >
-          <span className="text-[var(--gold)] font-mono text-xs">✦</span>
-          <span className="font-display font-medium text-[0.7rem] md:text-xs tracking-[0.3em] uppercase text-[var(--gold)]">
+          <span className="text-[var(--gold)] font-mono text-xs">🥂</span>
+          {/* <span className="font-display font-medium text-[0.7rem] md:text-xs tracking-[0.3em] uppercase text-[var(--gold)]">
             Haute Indian Gastronomy
-          </span>
+          </span> */}
         </motion.div>
 
         {/* 3D Liquid-Perspective Words */}
@@ -287,9 +287,9 @@ export default function HeroSection() {
         className="hidden lg:flex absolute right-8 bottom-12 flex-col items-center gap-2.5 text-[var(--soft)] hover:text-[var(--gold)] transition-colors group cursor-pointer"
         aria-label="Scroll down"
       >
-        <span className="text-[0.65rem] font-mono tracking-[0.25em] uppercase [writing-mode:vertical-rl]">
+        {/* <span className="text-[0.65rem] font-mono tracking-[0.25em] uppercase [writing-mode:vertical-rl]">
           Discover Sanctuary
-        </span>
+        </span> */}
         <div className="w-5 h-9 rounded-full border border-white/20 flex justify-center pt-1.5 group-hover:border-[var(--gold)] transition-colors">
           <motion.div
             animate={{ y: [0, 10, 0] }}
