@@ -129,7 +129,7 @@ export function ServicesSection() {
       />
 
       {/* Header */}
-      <div className="flex flex-col items-center text-center max-w-2xl mx-auto relative z-10" data-reveal data-motion="blur">
+      <div className="flex flex-col items-center text-center max-w-5xl mx-auto relative z-10" data-reveal data-motion="blur">
         <div className="inline-flex items-center gap-3 mb-3.5">
           <span className="text-[var(--gold)] text-xs font-serif">∼</span>
           <span className="text-[var(--gold)] font-display text-[0.72rem] tracking-[0.32em] uppercase font-semibold">

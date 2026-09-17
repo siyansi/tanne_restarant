@@ -51,7 +51,7 @@ export default function RootLayout({
       className={`${dmSans.variable} ${spaceGrotesk.variable} h-full antialiased`}
     >
       <body className="min-h-full flex flex-col">
-        <CulinaryCursor />
+        {/* <CulinaryCursor /> */}
         <Providers>{children}</Providers>
       </body>
     </html>

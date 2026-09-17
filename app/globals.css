@@ -201,9 +201,22 @@ button, a { -webkit-tap-highlight-color: transparent; }
   filter: url(#tanne-liquid-ripple);
 }
 
-
+/* 
 @media (pointer: fine) {
   *, *::before, *::after {
     cursor: none !important;
+  }
+} */
+@keyframes meteor {
+  0% {
+    transform: rotate(215deg) translateX(0);
+    opacity: 1;
+  }
+  70% {
+    opacity: 1;
+  }
+  100% {
+    transform: rotate(215deg) translateX(-600px);
+    opacity: 0;
   }
 }
