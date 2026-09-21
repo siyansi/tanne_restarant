@@ -76,7 +76,7 @@ export default function Navbar() {
         }}
         className={`pointer-events-auto flex items-center justify-between border rounded-full backdrop-blur-2xl will-change-transform ${
           scrolled
-            ? "w-full max-w-[54rem] h-[3.1rem] px-5 sm:px-7 bg-[#0c0805]/90 border-[var(--gold)]/35 shadow-[0_20px_50px_rgba(0,0,0,0.85)]"
+            ? "w-full max-w-[54rem] h-[3.1rem] px-5 sm:px-7 bg-[#0c0805]/90 border-white/10 shadow-[0_10px_35px_rgba(0,0,0,0.35)] shadow-[0_20px_50px_rgba(0,0,0,0.85)]"
             : "w-full max-w-7xl h-[3.85rem] px-7 sm:px-10 bg-[#0c0805]/45 border-white/10 shadow-[0_10px_35px_rgba(0,0,0,0.35)]"
         }`}
         aria-label="Main navigation"

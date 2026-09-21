@@ -395,10 +395,16 @@ const pillars = [
 
 
         {/* About Section */}
-     <section
+<section
       id="about"
-      className="relative z-10 p-9 px-5 md:px-[max(1.5rem,calc((100vw-90rem)/2))] bg-[#070503] text-[#f4efe6] border-t border-white/10 overflow-hidden"
+      className="relative z-10 py-9 px-5 md:px-[max(1.5rem,calc((100vw-90rem)/2))] bg-[#070503] text-[#f4efe6] overflow-hidden select-none"
     >
+      {/* Soft Hearth Radial Glow */}
+      <div 
+        className="absolute top-1/2 -left-40 w-[42rem] h-[42rem] rounded-full blur-[170px] pointer-events-none -z-10 bg-[radial-gradient(circle,rgba(215,186,114,0.08)_0%,transparent_70%)]" 
+        aria-hidden="true" 
+      />
+
       <div className="grid grid-cols-1 lg:grid-cols-[6fr_6fr] gap-16 lg:gap-24 items-center max-w-7xl mx-auto">
         
         {/* LEFT COLUMN: Narrative & Resort Philosophy */}
@@ -428,29 +434,34 @@ const pillars = [
             Conceived as a secluded sanctuary away from the city rhythm, Tanne blends timeless hospitality with contemporary South Indian gastronomy. Here, dining slows to the cadence of the garden courtyard, where warm embers, gentle fountains, and starlit canopies shape an unforgettable arrival.
           </p>
 
-          {/* Architectural Experience Pillars */}
-          <div className="mt-10 space-y-6 pt-8 border-t border-white/10">
+          {/* Experience Pillars (Zero Box Borders, Fluid Hover Drift) */}
+          <div className="mt-12 space-y-7">
             {pillars.map((item, idx) => (
-              <div key={item.title} className="grid grid-cols-[2rem_1fr] gap-4 items-baseline">
-                <span className="font-serif italic text-sm text-[var(--gold)]/80">
+              <motion.div 
+                key={item.title} 
+                whileHover={{ x: 6 }}
+                transition={{ duration: 0.3, ease: "easeOut" }}
+                className="grid grid-cols-[2rem_1fr] gap-4 items-baseline group cursor-default"
+              >
+                <span className="font-serif italic text-sm text-[var(--gold)]/80 group-hover:text-[var(--gold)] transition-colors">
                   0{idx + 1}
                 </span>
                 <div>
-                  <h3 className="m-0 font-display font-medium text-sm md:text-base text-white tracking-wide">
+                  <h3 className="m-0 font-display font-medium text-sm md:text-base text-white tracking-wide group-hover:text-[var(--gold)] transition-colors">
                     {item.title}
                   </h3>
                   <p className="mt-1 text-xs md:text-sm text-white/60 font-light leading-relaxed m-0">
                     {item.desc}
                   </p>
                 </div>
-              </div>
+              </motion.div>
             ))}
           </div>
 
-          {/* Heritage Timeline & Reservation Link */}
-          <div className="mt-12 flex flex-wrap items-center gap-8 pt-8 border-t border-white/10">
-            <div>
-              <p className="font-serif text-3xl text-white tracking-tight m-0">
+          {/* Heritage Timeline & Reservation Link (No Border Dividers) */}
+          <div className="mt-14 flex flex-wrap items-center gap-8">
+            <div className="group cursor-default">
+              <p className="font-serif text-3xl text-white tracking-tight m-0 transition-colors duration-300 group-hover:text-[var(--gold)]">
                 16 <span className="text-sm font-sans text-[var(--gold)]">Years</span>
               </p>
               <p className="text-[0.68rem] tracking-[0.2em] uppercase text-white/40 font-mono mt-0.5 m-0">
@@ -458,10 +469,10 @@ const pillars = [
               </p>
             </div>
 
-            <div className="h-8 w-px bg-white/10" />
+            <div className="w-1.5 h-1.5 rounded-full bg-white/20" />
 
-            <div>
-              <p className="font-serif text-3xl text-white tracking-tight m-0">
+            <div className="group cursor-default">
+              <p className="font-serif text-3xl text-white tracking-tight m-0 transition-colors duration-300 group-hover:text-[var(--gold)]">
                 06 <span className="text-sm font-sans text-[var(--gold)]">Salons</span>
               </p>
               <p className="text-[0.68rem] tracking-[0.2em] uppercase text-white/40 font-mono mt-0.5 m-0">
@@ -471,59 +482,62 @@ const pillars = [
 
             <a
               href="#reserve"
-              className="ml-auto inline-flex items-center gap-2 text-xs uppercase tracking-[0.2em] text-[var(--gold)] hover:text-white transition-colors"
+              className="group ml-auto inline-flex items-center gap-2.5 text-xs uppercase tracking-[0.2em] text-[var(--gold)] hover:text-white transition-colors"
             >
               <span>Explore Sanctuaries</span>
-              <span className="text-sm">→</span>
+              <span className="transition-transform duration-300 group-hover:translate-x-1">→</span>
             </a>
           </div>
         </motion.div>
 
-        {/* RIGHT COLUMN: Quiet Luxury Portrait Framing */}
+        {/* RIGHT COLUMN: Borderless Cinematic Portrait with Smooth Hover Motion */}
         <motion.div
           initial={{ opacity: 0, scale: 0.96 }}
           whileInView={{ opacity: 1, scale: 1 }}
           viewport={{ once: true, margin: "-100px" }}
           transition={{ duration: 1, ease: [0.16, 1, 0.3, 1] }}
-          className="relative"
+          className="relative group"
         >
-          {/* Subtle Outer Frame Accent */}
-          <div className="relative rounded-3xl p-3 md:p-4 bg-gradient-to-b from-[#16110b] to-[#0d0906] border border-[#c7a35d]/30 shadow-[0_30px_90px_rgba(0,0,0,0.85)]">
-            
-            {/* Fine Inset Line */}
-            <div className="absolute inset-2 md:inset-3 rounded-2xl border border-white/10 pointer-events-none z-10" />
+          {/* Ambient Glow That Blooms on Hover */}
+          <div 
+            className="absolute inset-4 rounded-3xl bg-[radial-gradient(circle,rgba(215,186,114,0.22)_0%,transparent_70%)] blur-2xl opacity-40 transition-opacity duration-700 group-hover:opacity-85 pointer-events-none -z-10" 
+            aria-hidden="true" 
+          />
 
-            {/* Chef/Atelier Photography */}
-            <div className="relative h-[60vh] lg:h-[42rem] min-h-[28rem] rounded-xl overflow-hidden bg-black">
-              <Image
-                src={chefImage}
-                alt="Culinary craft at Tanne Fine Dining"
-                fill
-                sizes="(max-width: 1024px) 100vw, 50vw"
-                className="object-cover object-center brightness-[0.85] contrast-[1.06]"
-              />
+          {/* Main Pure Image Frame (No Outer Lines or Boxes) */}
+          <motion.div 
+            whileHover={{ y: -6, scale: 1.015 }}
+            transition={{ duration: 0.7, ease: [0.25, 1, 0.5, 1] }}
+            className="relative h-[60vh] lg:h-[42rem] min-h-[28rem] rounded-3xl overflow-hidden bg-[#0d0905] shadow-[0_25px_70px_rgba(0,0,0,0.9)]"
+          >
+            <Image
+              src={chefImage}
+              alt="Culinary craft at Tanne Fine Dining"
+              fill
+              sizes="(max-width: 1024px) 100vw, 50vw"
+              className="object-cover object-center brightness-[0.88] contrast-[1.05] transition-all duration-1000 ease-out group-hover:scale-105 group-hover:brightness-[0.95]"
+            />
 
-              {/* Natural Shading Vignette */}
-              <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/15 to-transparent pointer-events-none" />
+            {/* Natural Deep Shading Vignettes */}
+            <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent pointer-events-none" />
+            <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-transparent to-transparent pointer-events-none" />
 
-              {/* Minimalist Caption Plaque */}
-              <div className="absolute inset-x-6 bottom-6 z-20 flex items-end justify-between">
-                <div>
-                  <p className="font-serif italic text-lg text-white/90 m-0">
-                    "Every course honors the ember and season."
-                  </p>
-                  <p className="text-[0.68rem] tracking-[0.25em] uppercase text-[var(--gold)] font-mono mt-1.5 m-0">
-                    Tanne Atelier · Coimbatore
-                  </p>
-                </div>
-
-                <span className="font-serif text-2xl text-[var(--gold)]/50 hidden sm:block">
-                  
-                </span>
+            {/* Caption Overlay */}
+            <div className="absolute inset-x-8 bottom-8 z-20 flex items-end justify-between pointer-events-none">
+              <div className="transition-transform duration-500 ease-out group-hover:-translate-y-1">
+                <p className="font-serif italic text-lg sm:text-xl text-white/95 m-0 leading-snug">
+                  "Every course honors the ember and season."
+                </p>
+                <p className="text-[0.68rem] tracking-[0.25em] uppercase text-[var(--gold)] font-mono mt-2 m-0">
+                  Tanne Atelier · Coimbatore
+                </p>
               </div>
-            </div>
 
-          </div>
+              <span className="font-serif text-2xl text-[var(--gold)] opacity-70 hidden sm:block">
+               
+              </span>
+            </div>
+          </motion.div>
         </motion.div>
 
       </div>
