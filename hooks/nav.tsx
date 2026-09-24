@@ -2,7 +2,8 @@
 
 import { useEffect, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-
+import Image from "next/image";
+import logoImg from "../assets/Firefly_RemoveBackground.png"; // or wherever your transparent logo is located
 const navItems = [
   { name: "Home", id: "home", chapter: "01" },
   { name: "About", id: "about", chapter: "02" },
@@ -83,15 +84,30 @@ export default function Navbar() {
       >
         {/* BRAND LOGO */}
         <a 
-          href="#home" 
-          className="flex items-center gap-1.5 group shrink-0"
-        >
-          <span className="font-serif text-lg md:text-xl tracking-[0.22em] text-white group-hover:text-[var(--gold)] transition-colors duration-300">
-            TANNE
-          </span>
-          <span className="w-1.5 h-1.5 rounded-full bg-[var(--gold)]" />
-        </a>
+  href="#home" 
+  className="relative flex items-center gap-2.5 group shrink-0 select-none py-1"
+  aria-label="Tanne Home"
+>
+  {/* Ambient Gold Halo Glow behind Logo */}
+  <span 
+    className="absolute -inset-1 rounded-full bg-[radial-gradient(circle,rgba(215,186,114,0.35)_0%,transparent_70%)] blur-md opacity-50 transition-opacity duration-300 group-hover:opacity-100 pointer-events-none" 
+    aria-hidden="true" 
+  />
 
+  {/* Logo Image Container with Gold Tone Lighting */}
+  <div className="relative h-8 md:h-12 w-auto aspect-square flex items-center justify-center transition-transform duration-300 ease-out group-hover:scale-105">
+    <Image
+      src={logoImg}
+      alt="Tanne Fine Dining Logo"
+      fill
+      priority
+      className="object-contain  filter brightness-110 contrast-105"
+    />
+  </div>
+
+  {/* Optional Subtle Gold Dot Accent */}
+  {/* <span className="w-1.5 h-1.5 rounded-full bg-[var(--gold)] shadow-[0_0_8px_var(--gold)] transition-transform duration-300 group-hover:scale-125" /> */}
+</a>
         {/* DESKTOP NAV LINKS WITH EXPANSIVE BREATHING ROOM */}
         <div 
           className={`hidden md:flex items-center mx-auto transition-all duration-500 ease-out ${
